@@ -29,6 +29,16 @@ class Auth{
             method: "GET",
         });
     }
+
+    getCurrentUser(jwt) {
+        return this._request(`${this._url}/users/me`, {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${jwt}`,
+            },
+            method: "GET",
+        });
+    }
   
     _checkResponse(res) {
         if (res.ok) {
@@ -42,7 +52,7 @@ class Auth{
 }
 
 const auth = new Auth({
-    url: "https://auth.nomoreparties.co",
+    url: "https://api.unicomleam.nomoreparties.co",
     headers: {
       "Content-Type": "application/json",
     }

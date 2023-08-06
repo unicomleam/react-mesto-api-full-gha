@@ -88,12 +88,15 @@ export class Api {
           return res.json();
         } else { return Promise.reject(`Ошибка ${res.status}`) }
     }
+
+    getJwt(){
+        return this._headers.authorization = `Bearer ${localStorage.getItem('jwt')}`;
+    }
 }
 
 const api = new Api({
-    baseUrl: "https://mesto.nomoreparties.co/v1/cohort-64",
+    baseUrl: "https://api.unicomleam.nomoreparties.co",
     headers: {
-      authorization: "21b11495-c94c-4046-948f-6f22948df308",
       "Content-Type": "application/json"
     }
 });

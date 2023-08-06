@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 62.84.113.28
 
-Frontend https://...
+Frontend https://unicomleam.nomoreparties.co
 
-Backend https://...
+Backend https://api.unicomleam.nomoreparties.co/

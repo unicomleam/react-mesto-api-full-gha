@@ -56,6 +56,7 @@ function App() {
   }, []);
 
   useEffect(() => {
+    api.getJwt();
     if (loggedIn) {
       api.getDataArray()
         .then(([userInfo, dataInitialCards]) => {
