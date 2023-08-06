@@ -29,16 +29,6 @@ class Auth{
             method: "GET",
         });
     }
-
-    getCurrentUser(jwt) {
-        return this._sendRequest(`${this._url}/users/me`, {
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${jwt}`,
-            },
-            method: "GET",
-        });
-    }
   
     _checkResponse(res) {
         if (res.ok) {

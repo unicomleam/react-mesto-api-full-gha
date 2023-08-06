@@ -179,7 +179,7 @@ function App() {
       auth.getContent(jwt)
         .then((res) => {
           setLoggedIn(true);
-          setEmail(res.data.email);
+          setEmail(res.data.email); ///
           navigate("/");
         })
         .catch(console.error);
