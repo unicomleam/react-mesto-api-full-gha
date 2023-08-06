@@ -44,18 +44,6 @@ function App() {
   const [infoTooltipPopup, setInfoTooltipPopup] = useState(false);
 
   useEffect(() => {
-    api.getJwt();
-    if (loggedIn) {
-      api.getDataArray()
-        .then(([userInfo, dataInitialCards]) => {
-          setCurrentUser(userInfo);
-          setCards(dataInitialCards);
-        })
-        .catch(console.error);
-    }
-  }, [loggedIn]);
-
-  useEffect(() => {
     api.getUserInfo()
       .then((userData) => { setCurrentUser(userData) })
       .catch(console.error);
@@ -66,6 +54,17 @@ function App() {
       .then((arrayCards) => { setCards(arrayCards) })
       .catch(console.error);
   }, []);
+
+  useEffect(() => {
+    if (loggedIn) {
+      api.getDataArray()
+        .then(([userInfo, dataInitialCards]) => {
+          setCurrentUser(userInfo);
+          setCards(dataInitialCards);
+        })
+        .catch(console.error);
+    }
+  }, [loggedIn]);
 
   function handleEditProfileClick() {
     setEditProfileOpened(true)
@@ -193,7 +192,7 @@ function App() {
     setEmail("");
   }
 
-  useEffect(() => { tokenCheck() }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { tokenCheck() }, [navigate]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <CurrentUserContext.Provider value={currentUser}>

@@ -54,7 +54,7 @@ class Auth{
 const auth = new Auth({
     url: "https://api.unicomleam.nomoreparties.co",
     headers: {
-      "Content-Type": "application/json",
+        "Content-Type": "application/json",
     }
 });
 
