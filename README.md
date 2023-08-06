@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 62.84.113.28
+IP 62.84.113.28
 
 Frontend https://unicomleam.nomoreparties.co
 
