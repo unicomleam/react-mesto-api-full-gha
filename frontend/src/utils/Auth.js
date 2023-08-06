@@ -31,7 +31,7 @@ class Auth{
     }
 
     getCurrentUser(jwt) {
-        return this._request(`${this._url}/users/me`, {
+        return this._sendRequest(`${this._url}/users/me`, {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${jwt}`,

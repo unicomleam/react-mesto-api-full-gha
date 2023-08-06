@@ -97,7 +97,7 @@ export class Api {
 const api = new Api({
     baseUrl: "https://api.unicomleam.nomoreparties.co",
     headers: {
-      "Content-Type": "application/json"
+        "Content-Type": "application/json"
     }
 });
 

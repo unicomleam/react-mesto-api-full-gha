@@ -44,18 +44,6 @@ function App() {
   const [infoTooltipPopup, setInfoTooltipPopup] = useState(false);
 
   useEffect(() => {
-    api.getUserInfo()
-      .then((userData) => { setCurrentUser(userData) })
-      .catch(console.error);
-  }, []);
-
-  useEffect(() => {
-    api.getInitialCards()
-      .then((arrayCards) => { setCards(arrayCards) })
-      .catch(console.error);
-  }, []);
-
-  useEffect(() => {
     api.getJwt();
     if (loggedIn) {
       api.getDataArray()
@@ -66,6 +54,18 @@ function App() {
         .catch(console.error);
     }
   }, [loggedIn]);
+
+  useEffect(() => {
+    api.getUserInfo()
+      .then((userData) => { setCurrentUser(userData) })
+      .catch(console.error);
+  }, []);
+
+  useEffect(() => {
+    api.getInitialCards()
+      .then((arrayCards) => { setCards(arrayCards) })
+      .catch(console.error);
+  }, []);
 
   function handleEditProfileClick() {
     setEditProfileOpened(true)
