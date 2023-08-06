@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
 const { errors } = require('celebrate');
+const cors = require('cors');
 
 const usersRouter = require('./routes/users');
 const cardsRouter = require('./routes/cards');
@@ -22,6 +23,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 
 app.use(helmet());
 app.use(express.json());
+app.use(cors());
 
 app.use(requestLogger);
 
@@ -51,4 +53,4 @@ app.use((err, req, res, next) => {
   next();
 });
 
-app.listen(PORT, () => { console.log(`Сервер запущен на порту ${PORT}`); });
+app.listen(PORT);
