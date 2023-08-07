@@ -3,7 +3,7 @@ const BadRequestError = require('../errors/BadRequestError');
 const NotFoundError = require('../errors/NotFoundError');
 const ForbiddenError = require('../errors/ForbiddenError');
 const { CREATED_STATUS } = require('../utils/server-err');
-///
+
 module.exports.getAllCards = (req, res, next) => {
   Card.find({})
     .then((cards) => { res.send(cards); })
