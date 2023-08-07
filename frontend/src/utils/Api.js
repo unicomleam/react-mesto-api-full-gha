@@ -4,6 +4,10 @@ export class Api {
         this.headers = headers;
     }
 
+    getJwt(){
+        return this.headers.authorization = `Bearer ${localStorage.getItem('jwt')}`;
+    }
+
     getInitialCards() {
         return this._sendRequest(`${this.baseUrl}/cards`, {
             method: "GET",
@@ -93,8 +97,7 @@ export class Api {
 const api = new Api({
     baseUrl: "https://api.unicomleam.nomoreparties.co",
     headers: {
-        authorization: "21b11495-c94c-4046-948f-6f22948df308",   ///`Bearer ${localStorage.getItem("jwt")}`
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
     }
 });
 
