@@ -18,14 +18,14 @@ module.exports.getUserByIdValidation = celebrate({
 
 module.exports.updateUserValidation = celebrate({
   body: Joi.object().keys({
-    name: Joi.string().min(2).max(30),
-    about: Joi.string().min(2).max(30),
+    name: Joi.string().required().min(2).max(30),
+    about: Joi.string().required().min(2).max(30),
   }),
 });
 
 module.exports.updateAvatarValidation = celebrate({
   body: Joi.object().keys({
-    avatar: Joi.string().pattern(/https?:\/\/(www\.)?[\w\d-]+\.[\w\d-.~:/?#[\]@!$&'()*+,;=]+#?/),
+    avatar: Joi.string().required().pattern(/https?:\/\/(www\.)?[\w\d-]+\.[\w\d-.~:/?#[\]@!$&'()*+,;=]+#?/),
   }),
 });
 

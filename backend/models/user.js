@@ -46,8 +46,7 @@ const userSchema = new mongoose.Schema({
   toObject: { useProjection: true },
 }, { versionKey: false });
 
-// eslint-disable-next-line func-names
-userSchema.statics.findUserByCredentials = function (email, password) {
+userSchema.statics.findUserByCredentials = function verification(email, password) {
   return this.findOne({ email }).select('+password')
     .then((user) => {
       if (!user) {
